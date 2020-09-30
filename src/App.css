@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600&display=swap");
+
+.nav-color {
+  background-color: teal;
+  font-family: "Noto Serif JP", serif;
+}
+
+.title {
+  color: teal;
+  font-family: "Noto Serif JP", serif;
+}
+.form-style {
+  color: white;
+  background-color: teal;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 55%;
+  box-shadow: 0px 9px 10px -2px rgba(0, 0, 0, 0.55);
+  -webkit-box-shadow: 0px 9px 10px -2px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 0px 9px 10px -2px rgba(0, 0, 0, 0.55);
+}
+
+.herobutton {
+  border: 1px solid teal;
+  background-color: white;
+  color: teal;
+  font-size: larger;
+  font-family: "Noto Serif JP", serif;
+}
+
+.herobutton:hover {
+  box-shadow: 0px 9px 10px -2px rgba(0, 0, 0, 0.55);
+  -webkit-box-shadow: 0px 9px 10px -2px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 0px 9px 10px -2px rgba(0, 0, 0, 0.55);
+}
+
+.temp-area {
+  padding: 2rem 2rem;
+  text-align: center;
+}
+
+.temp-area .temp-title {
+  padding: 0 14rem;
+}
+
+.temp-area .temp-title h1 {
+  color: teal;
+  font-family: "Noto Serif JP", serif;
+}
+
+.weather {
+  font-family: "Noto Serif JP", serif;
+  background: rgba(248, 252, 253, 0.973);
+  width: 12rem;
+  margin: 3rem 0.5rem;
+  color: teal;
+  box-shadow: 2px -1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-img {
+  width: 60px;
+  height: 60px;
+}
