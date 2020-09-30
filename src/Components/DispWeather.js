@@ -14,7 +14,8 @@ class DispWeather extends Component {
         <div className="container ">
           <div className="row">
             <div className="col-lg-12 text-center temp-title">
-              <h1>Weather report : {data.weather[0].description}</h1>
+              <h1>Weather report : {this.props.city}</h1>
+              <h2>Condition:{data.weather[0].description}</h2>
             </div>
           </div>
           <div className="container temp-list">

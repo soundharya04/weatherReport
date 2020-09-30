@@ -14,10 +14,10 @@ class WeatherReport extends Component {
 
   getWeather = (e) => {
     e.preventDefault();
-    this.setState({
+    /* this.setState({
       city: "",
       country: "",
-    });
+    });*/
     var city = this.state.city;
     var country = this.state.country;
     axios
@@ -101,7 +101,11 @@ class WeatherReport extends Component {
         </div>
 
         {this.state.Comp && (
-          <Comp data={this.state.data} error={this.state.error} />
+          <Comp
+            data={this.state.data}
+            error={this.state.error}
+            city={this.state.city}
+          />
         )}
       </React.Fragment>
     );
