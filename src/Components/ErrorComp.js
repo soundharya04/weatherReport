@@ -4,8 +4,8 @@ class ErrorComp extends Component {
   render() {
     console.log(this.props.error);
     return this.props.error ? (
-      <div>
-        <span>Please enter valid city name</span>
+      <div className="container error">
+        <h5>Please enter valid city name</h5>
       </div>
     ) : null;
   }
