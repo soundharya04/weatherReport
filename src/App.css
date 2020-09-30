@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600&display=swap");
 
+body {
+  overflow: hidden;
+}
+
 .nav-color {
   background-color: teal;
   font-family: "Noto Serif JP", serif;

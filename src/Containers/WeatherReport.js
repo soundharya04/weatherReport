@@ -14,37 +14,47 @@ class WeatherReport extends Component {
 
   getWeather = (e) => {
     e.preventDefault();
-    /* this.setState({
-      city: "",
-      country: "",
-    });*/
+
     var city = this.state.city;
     var country = this.state.country;
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}`
-      )
-      .then((res) => {
-        console.log(res.data);
+    var nametest = RegExp(
+      /^[a-zA-Z\u0080-\u024F]+(?:([\ \-\']|(\.\ ))[a-zA-Z\u0080-\u024F]+)*$/
+    );
+
+    if (!nametest.test(city) || !nametest.test(city)) {
+      import("../Components/ErrorComp").then((res) => {
         this.setState({
-          data: res.data,
-        });
-        import("../Components/DispWeather").then((res) => {
-          this.setState({
-            Comp: res.default,
-          });
-        });
-      })
-      .catch((err) => {
-        this.setState({
-          error: err.response.data,
-        });
-        import("../Components/ErrorComp").then((res) => {
-          this.setState({
-            Comp: res.default,
-          });
+          Comp: res.default,
+          error: "Please enter valid City/Country Name",
         });
       });
+    } else {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}`
+        )
+        .then((res) => {
+          console.log(res.data);
+          this.setState({
+            data: res.data,
+          });
+          import("../Components/DispWeather").then((res) => {
+            this.setState({
+              Comp: res.default,
+            });
+          });
+        })
+        .catch((err) => {
+          this.setState({
+            error: err.response.data,
+          });
+          import("../Components/ErrorComp").then((res) => {
+            this.setState({
+              Comp: res.default,
+            });
+          });
+        });
+    }
   };
   render() {
     const { Comp } = this.state;
@@ -53,7 +63,7 @@ class WeatherReport extends Component {
         <h3 className=" mt-4 text-center title">
           Let's find out today's weather{" "}
         </h3>
-        <div className="container form-style mt-5">
+        <div className="container form-style mt-3">
           <form className="form-inline" onSubmit={this.getWeather}>
             <div className="form-group">
               <label htmlFor="city" className="mr-3">
