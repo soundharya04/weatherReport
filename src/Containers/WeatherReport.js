@@ -21,7 +21,7 @@ class WeatherReport extends Component {
       /^[a-zA-Z\u0080-\u024F]+(?:([\ \-\']|(\.\ ))[a-zA-Z\u0080-\u024F]+)*$/
     );
 
-    if (!nametest.test(city) || !nametest.test(city)) {
+    if (!nametest.test(city)) {
       import("../Components/ErrorComp").then((res) => {
         this.setState({
           Comp: res.default,
@@ -31,10 +31,9 @@ class WeatherReport extends Component {
     } else {
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}`
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}`
         )
         .then((res) => {
-          console.log(res.data);
           this.setState({
             data: res.data,
           });
@@ -77,25 +76,6 @@ class WeatherReport extends Component {
                 onChange={(e) => {
                   this.setState({
                     city: e.target.value,
-                    data: "",
-                    error: "",
-                    Comp: "",
-                  });
-                }}
-              />
-            </div>
-            <div class="form-group">
-              <label htmlFor="country" className="mr-3">
-                Country:
-              </label>
-              <input
-                type="text"
-                className="form-control mr-3"
-                value={this.state.country}
-                required
-                onChange={(e) => {
-                  this.setState({
-                    country: e.target.value,
                     data: "",
                     error: "",
                     Comp: "",
