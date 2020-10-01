@@ -21,7 +21,7 @@ class WeatherReport extends Component {
       /^[a-zA-Z\u0080-\u024F]+(?:([\ \-\']|(\.\ ))[a-zA-Z\u0080-\u024F]+)*$/
     );
 
-    if (!nametest.test(city) || !nametest.test(city)) {
+    if (!nametest.test(city) || !nametest.test(country)) {
       import("../Components/ErrorComp").then((res) => {
         this.setState({
           Comp: res.default,

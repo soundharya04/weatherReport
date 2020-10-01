@@ -7,7 +7,16 @@ export const ImageCard = (props) => {
       </div>
       <div className="card-body text-center">
         <h5 className="card-title text-uppercase font-roboto">{props.title}</h5>
-        <p className="card-text text-secondary">{props.children}</p>
+        <p
+          className="card-text"
+          style={{
+            color: "teal",
+            fontSize: "larger",
+            fontWeight: "bold",
+          }}
+        >
+          {props.children}
+        </p>
       </div>
     </div>
   );
