@@ -21,11 +21,7 @@ class WeatherReport extends Component {
       /^[a-zA-Z\u0080-\u024F]+(?:([\ \-\']|(\.\ ))[a-zA-Z\u0080-\u024F]+)*$/
     );
 
-<<<<<<< HEAD
-    if (!nametest.test(city) || !nametest.test(country)) {
-=======
     if (!nametest.test(city)) {
->>>>>>> 6b8b45231ca4093ea85bf32557c2142b831285b6
       import("../Components/ErrorComp").then((res) => {
         this.setState({
           Comp: res.default,
@@ -49,7 +45,7 @@ class WeatherReport extends Component {
         })
         .catch((err) => {
           this.setState({
-            error: err.response.data,
+            error: err.response && err.response.data,
           });
           import("../Components/ErrorComp").then((res) => {
             this.setState({
