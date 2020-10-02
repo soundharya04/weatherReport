@@ -1,4 +1,5 @@
 import React from "react";
+
 export const ImageCard = (props) => {
   return (
     <div className="weather">
@@ -21,3 +22,5 @@ export const ImageCard = (props) => {
     </div>
   );
 };
+
+export const Spinner = () => <div className="Loader">Loading...</div>;
