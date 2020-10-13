@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Spinner } from "../Components/dispElements";
 
 const API_KEY = "4411ce3c496ff3b079ef3de96745265e";
 
@@ -11,17 +10,13 @@ class WeatherReport extends Component {
     data: {},
     error: {},
     Comp: "",
-    loading: false,
   };
 
   getWeather = (e) => {
     e.preventDefault();
-    this.setState({
-      Comp: <Spinner></Spinner>,
-      loading: true,
-    });
+
     var city = this.state.city;
-    var country = this.state.country;
+
     var nametest = RegExp(
       /^[a-zA-Z\u0080-\u024F]+(?:([\ \-\']|(\.\ ))[a-zA-Z\u0080-\u024F]+)*$/
     );

@@ -7,7 +7,6 @@ import i4 from "../Images/Wind.jpg";
 
 class DispWeather extends Component {
   render() {
-    console.log(this.props);
     const { data } = this.props;
     return (
       <div className="temp-area">
